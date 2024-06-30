@@ -1,0 +1,50 @@
+﻿<Window x:Class="BirdsProject1.DisplayCage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BirdsProject1"
+        mc:Ignorable="d"
+        Title="DisplayCage" Height="600" Width="1000" WindowStartupLocation="CenterScreen" Icon="birdIcon2.png">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="CageDetails (2).png"/>
+        </Grid.Background>
+        <TextBox x:Name="txtSerialNumberCage" HorizontalAlignment="Left" Height="24" Margin="198,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True"/>
+        <TextBox x:Name="txtLengthCage" HorizontalAlignment="Left" Height="26" Margin="198,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True"/>
+        <TextBox x:Name="txtWidthCage" HorizontalAlignment="Left" Height="25" Margin="198,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True"/>
+        <TextBox x:Name="txtHeightCage" HorizontalAlignment="Left" Height="24" Margin="482,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True"/>
+        <TextBox x:Name="txtMaterial" HorizontalAlignment="Left" Height="24" Margin="482,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" IsReadOnly="True"/>
+        <Button x:Name="btnEditCage"  HorizontalAlignment="Left" Height="35" Margin="830,279,0,0" VerticalAlignment="Top" Width="115" Click="btnAddCage_Click" Content="" IsCancel="True" BorderBrush="#FFE01515" Background="#FF710D0D" Foreground="#FF675A5A" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="#00248EB1" BorderBrush="#0000008B" BorderThickness="2"
+                    CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <DataGrid x:Name="datagridAllBird" HorizontalAlignment="Left" Height="122" Margin="163,368,0,0" VerticalAlignment="Top" Width="645" AutoGenerateColumns ="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Serial Number" Binding="{Binding SerialNumber}" />
+                <DataGridTextColumn Header="species" Binding="{Binding species}" />
+                <DataGridTextColumn Header="subSpecies" Binding="{Binding subSpecies}" />
+                <DataGridTextColumn Header="hatch Date" Binding="{Binding hatchDate}" />
+                <DataGridTextColumn Header="gender" Binding="{Binding gender}" />
+                <DataGridTextColumn Header="cageNumber" Binding="{Binding cageNumber}" />
+                <DataGridTextColumn Header="Serial Number Mother" Binding="{Binding SerialNumberMother}" />
+                <DataGridTextColumn Header="Serial Number father" Binding="{Binding SerialNumberfather}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Serial number" HorizontalAlignment="Left" Margin="197,172,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Label Content="Length" HorizontalAlignment="Left" Margin="197,226,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Label Content="Width" HorizontalAlignment="Left" Margin="197,283,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Label Content="Height" HorizontalAlignment="Left" Margin="482,197,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Label Content="Material" HorizontalAlignment="Left" Margin="482,251,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Label Content="Birds details:" HorizontalAlignment="Left" Margin="164,342,0,0" VerticalAlignment="Top" FontFamily="Sylfaen" FontSize="16"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="920,95,0,0" VerticalAlignment="Top" Width="54" Height="54" Opacity="0" Click="Button_Click"/>
+
+
+    </Grid>
+</Window>
